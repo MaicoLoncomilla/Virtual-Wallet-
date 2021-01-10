@@ -14,7 +14,6 @@ import QuestionAndAnswers from "../screens/faq/QuestionAndAnswers";
 import UserProfile from "../screens/main/screens/userProfile/UserProfile";
 import DatosPersonales from "../screens/main/screens/userProfile/DatosPersonales";
 import Enviar from "../screens/main/screens/enviar/Enviar";
-import EnviarContact from "../screens/main/screens/enviar/EnviarContact";
 import ModificarContacto from "../screens/main/screens/modificarContactos/ModificarContacto";
 import SideBar from "../screens/main/screens/DrawerContent";
 import EnEfectivo from "../screens/main/screens/recargar/EnEfectivo";
@@ -42,7 +41,6 @@ export default function MyStack(props) {
           <Stack.Screen name="DatosPersonales" component={DatosPersonales} />
           <Stack.Screen name="EnEfectivo" component={EnEfectivo} />
           <Stack.Screen name="Enviar" component={Enviar} />
-          <Stack.Screen name="EnviarContact" component={EnviarContact} />
           <Stack.Screen
             name="QuestionAndAnswers"
             component={QuestionAndAnswers}
