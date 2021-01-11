@@ -97,6 +97,13 @@ const s = StyleSheet.create({
     marginLeft: "auto",
     marginRight: "auto",
   },
-  title: { color: "#f23b6c", fontFamily: "Bree-Serif", fontWeight: "500" },
-  text: { color: "#cb3065", fontFamily: "Bree-Serif" },
+  title: {
+    color: "#f23b6c",
+    fontFamily: "Bree-Serif",
+    fontWeight: "500"
+  },
+  text: {
+    color: "#cb3065",
+    fontFamily: "Bree-Serif"
+  },
 });

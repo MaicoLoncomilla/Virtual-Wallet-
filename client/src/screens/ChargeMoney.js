@@ -63,11 +63,7 @@ export default function ChargeMoney(props) {
       };
 
       axios
-        .post(
-          `https://walletfly.glitch.me/transaction/byUserEmail/${recarga.email}`,
-          data
-        )
-
+        .post(`https://walletfly.glitch.me/transaction/byUserEmail/${recarga.email}`, data)
         .then(({ data }) => {
           if (wApp) {
             wAppNotification();

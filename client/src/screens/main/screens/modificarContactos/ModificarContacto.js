@@ -184,13 +184,11 @@ export default function ModificarContacto({ navigation, route }) {
             </Text>
           </View>
         </View>
-        {active ? (
+        {active &&
           <TouchableOpacity onPress={() => handleEdit(value)} style={s.button}>
             <Text style={s.textButton}>Aceptar Cambios</Text>
           </TouchableOpacity>
-        ) : (
-            <View />
-          )}
+        }
         <TouchableOpacity
           style={s.button}
           onPress={() => navigation.navigate("Enviar", { email: email })}

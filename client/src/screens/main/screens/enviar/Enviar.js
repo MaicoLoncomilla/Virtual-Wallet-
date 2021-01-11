@@ -67,12 +67,10 @@ export default function Enviar(props) {
           });
           if (login.success) {
             Axios.get(
-              `https://walletfly.glitch.me/users/getUserByEmail?email=${email ? email : text.email}`
+              `https://walletfly.glitch.me/users/getUserByEmail?email=${text.email != "" ? text.email: email}`
             )
               .then(({ data }) => {
                 contact = data;
-              })
-              .then((data) => {
                 let contactUser = contact.firstName + " " + contact.lastName
                 return Axios.post(
                   `https://walletfly.glitch.me/transaction/${account}`,
@@ -119,12 +117,10 @@ export default function Enviar(props) {
           }
         } else {
           Axios.get(
-            `https://walletfly.glitch.me/users/getUserByEmail?email=${email ? email : text.email}`
+            `https://walletfly.glitch.me/users/getUserByEmail?email=${text.email != "" ? text.email: email}`
           )
             .then(({ data }) => {
               contact = data;
-            })
-            .then((data) => {
               let contactUser = contact.firstName + " " + contact.lastName
               return Axios.post(
                 `https://walletfly.glitch.me/transaction/${account}`,

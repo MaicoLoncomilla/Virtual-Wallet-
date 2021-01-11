@@ -25,30 +25,20 @@ export default function Contactos({ navigation }) {
   const emptyAvatar = require("../../../../assets/Avatar.png");
   const iconPng = require("../../../images/Icon.png")
   const addContact = () => {
-    axios
-      .get(
-        `https://walletfly.glitch.me/users/getUserByEmail/?email=${text.email}`
-      )
+    
+    axios.get(`https://walletfly.glitch.me/users/getUserByEmail/?email=${text.email}`)
       .then(({ data }) => {
-        axios
-          .post(
-            `https://walletfly.glitch.me/contacts/${user.id}?contactId=${data.id}`
-          )
-          .then(({ data }) => {
-            dispatch({
-              type: CONTACTOS,
-              payload: data,
-            });
-            setVisible(!visible);
-            setText({ email: "", alias: "" });
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        return axios.post(`https://walletfly.glitch.me/contacts/${user.id}?contactId=${data.id}`)
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .then(({ data }) => {
+        dispatch({
+          type: CONTACTOS,
+          payload: data,
+        });
+        setVisible(!visible);
+        setText({ email: "", alias: "" });
+      })
+      .catch(err => console.log(err))
   };
   useEffect(() => {
     axios
